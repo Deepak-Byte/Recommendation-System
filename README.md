@@ -53,4 +53,4 @@ The project uses the **[Kaggle Movies Metadata dataset](https://www.kaggle.com/d
       for i in range(len(df))
   ]
   ```
-
+- The TF-IDF matrix shape is (n_movies, n_features) (e.g., 45,000 movies × 500 features).
