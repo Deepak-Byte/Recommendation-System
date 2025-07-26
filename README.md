@@ -54,3 +54,50 @@ The project uses the **[Kaggle Movies Metadata dataset](https://www.kaggle.com/d
   ]
   ```
 - The TF-IDF matrix shape is (n_movies, n_features) (e.g., 45,000 movies × 500 features).
+
+### **6. Numeric Features**
+- Numeric columns like popularity, runtime, vote_average, vote_count are converted into a NumPy array.
+- Combined matrix = [TF-IDF features + numeric columns].
+
+### **7. Dimensionality Reduction (PCA)**
+- PCA (Principal Component Analysis) is applied to reduce the high-dimensional feature matrix into fewer components (e.g., 100 dimensions).
+- This speeds up similarity calculations and removes noise.
+
+### **8. Cosine Similarity**
+- A cosine similarity matrix is computed from the reduced PCA features.
+--  The result is a square matrix (n_movies, n_movies) where each entry [i, j] is the similarity score between movie i and j.
+
+### **9. Recommendation Logic**
+- Given a movie name, find its index:
+  ```python
+  python
+  Copy
+  Edit
+  ```
+- Extract similarity scores for that movie from the similarity matrix.
+- Sort movies by similarity score (descending) and select the Top 10 most similar movies.
+
+### **10. Output Recommendations**
+- Extract titles of the top 10 recommended movies:
+```python
+  python
+  Copy
+  Edit
+  ```
+
+## Key Points to Explain in Interview
+- TF-IDF: Converts text into numerical vectors representing the importance of words.
+- PCA: Reduces dimensionality to improve efficiency and remove noise.
+- Cosine Similarity: Measures how similar two movies are based on their vectorized features.
+- Hybrid Approach: Combines both textual data (overview, genres) and numeric data (popularity, ratings).
+- End-to-End Workflow: Data cleaning → Feature engineering → Vectorization → Dimensionality reduction → Similarity → Top-N recommendations.
+
+
+
+
+
+
+
+
+
+
