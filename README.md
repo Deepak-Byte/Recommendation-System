@@ -70,19 +70,15 @@ The project uses the **[Kaggle Movies Metadata dataset](https://www.kaggle.com/d
 ### **9. Recommendation Logic**
 - Given a movie name, find its index:
   ```python
-  python
-  Copy
-  Edit
+  movie_index = data[data['original_title'] == movie_name].index[0]
   ```
 - Extract similarity scores for that movie from the similarity matrix.
 - Sort movies by similarity score (descending) and select the Top 10 most similar movies.
 
 ### **10. Output Recommendations**
 - Extract titles of the top 10 recommended movies:
-```python
-  python
-  Copy
-  Edit
+  ```python
+  recommended_movies = data.iloc[indices]['original_title']
   ```
 
 ## Key Points to Explain in Interview
@@ -91,6 +87,12 @@ The project uses the **[Kaggle Movies Metadata dataset](https://www.kaggle.com/d
 - Cosine Similarity: Measures how similar two movies are based on their vectorized features.
 - Hybrid Approach: Combines both textual data (overview, genres) and numeric data (popularity, ratings).
 - End-to-End Workflow: Data cleaning → Feature engineering → Vectorization → Dimensionality reduction → Similarity → Top-N recommendations.
+
+## 🛠 Future Improvements
+- Add BERT embeddings for better semantic understanding.
+- Implement hybrid recommendation with collaborative filtering.
+- Build a web app using Streamlit/Flask.
+
 
 
 
