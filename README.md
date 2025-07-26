@@ -52,4 +52,5 @@ The project uses the **[Kaggle Movies Metadata dataset](https://www.kaggle.com/d
       ' '.join(str(data[col].iloc[i]) for col in l) 
       for i in range(len(df))
   ]
+  ```
 
